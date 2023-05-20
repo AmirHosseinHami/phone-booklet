@@ -131,3 +131,29 @@ int main() {
             break;
 
         }
+
+        case 5: {
+
+            cout << "name of the contact to add a cellnumber to: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto& contact : contacts) {
+                if (contact.name == name) {
+                    CellNumber cellNumber;
+                    cout << "type of the cellnumber (e.g. WORK, HOME): ";
+                    getline(cin, cellNumber.type);
+                    cout << "cellnumber: ";
+                    getline(cin, cellNumber.number);
+                    contact.cellNumbers.push_back(cellNumber);
+                    cout << "cellnumber is added." << endl;
+                    ifFounded = true;
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
