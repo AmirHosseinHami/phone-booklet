@@ -90,3 +90,24 @@ int main() {
             break;
 
         }
+
+        case 3: {
+
+            cout << "name of the contact to delete: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto it = contacts.begin(); it != contacts.end(); it++) {
+                if (it->name == name) {
+                    contacts.erase(it);
+                    cout << "contact is deleted." << endl;
+                    ifFounded = true;
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
