@@ -111,3 +111,23 @@ int main() {
             break;
 
         }
+
+        case 4: {
+
+            cout << "name of the contact to be searched for: ";
+            char name;
+            cin >> name;
+            getchar();
+            bool ifFounded = false;
+            for (const auto& contact : contacts) {
+                if (contact.name[0] == name) {
+                    showCellNumbers(contact);
+                    ifFounded = true;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
