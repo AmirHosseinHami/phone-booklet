@@ -68,3 +68,25 @@ int main() {
             break;
 
         }
+
+        case 2: {
+
+            cout << "name of the contact to edit: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto& contact : contacts) {
+                if (contact.name == name) {
+                    cout << "new name of the contact: ";
+                    getline(cin, contact.name);
+                    cout << "Contact is edited." << endl;
+                    ifFounded = true;
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
