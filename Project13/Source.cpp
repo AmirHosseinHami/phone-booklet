@@ -157,3 +157,33 @@ int main() {
             break;
 
         }
+
+        case 6: {
+
+            cout << "name of the contact to edit a cellnumber for: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto& contact : contacts) {
+                if (contact.name == name) {
+                    cout << "type of the cellnumber to edit: ";
+                    string type;
+                    getline(cin, type);
+                    for (auto& cellNumber : contact.cellNumbers) {
+                        if (cellNumber.type == type) {
+                            cout << "new cellnumber: ";
+                            cin >> cellNumber.number;
+                            cout << "cellnumber is edited." << endl;
+                            ifFounded = true;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "Contact is not founded." << endl;
+            }
+            break;
+
+        }
