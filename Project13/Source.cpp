@@ -53,3 +53,18 @@ int main() {
         int input1;
         cin >> input1;
         getchar();
+
+        switch (input1) {
+
+        case 1: {
+
+            string name;
+            Contact contact;
+            cout << "name of the contact: ";
+            getline(cin, name);
+            contact.name = name;
+            contacts.push_back(contact);
+            cout << "contact is added." << endl;
+            break;
+
+        }
