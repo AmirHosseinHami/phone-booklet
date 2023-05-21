@@ -291,3 +291,23 @@ int main() {
             break;
 
         }
+
+        case 12: {
+
+            cout << "name of the contact to show cellnumbers for: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (const auto& contact : contacts) {
+                if (contact.name == name) {
+                    showCellNumbers(contact);
+                    ifFounded = true;
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
