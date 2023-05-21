@@ -321,3 +321,17 @@ int main() {
             break;
 
         }
+
+
+        case 14: {
+            exit(1);
+        }
+
+        default: {
+            cout << "Invalid input. Enter again." << endl;
+            break;
+        }
+
+        }
+    }
+    return 0;
