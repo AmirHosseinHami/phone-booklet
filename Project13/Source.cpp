@@ -258,3 +258,25 @@ int main() {
             break;
 
         }
+
+
+        case 10: {
+
+            cout << "name of the contact to be moved: ";
+            string name;
+            getline(cin, name);
+            auto it = favoriteContacts.begin();
+            while (it != favoriteContacts.end() && (*it)->name != name) {
+                it++;
+            }
+            if (it != favoriteContacts.end()) {
+                favoriteContacts.erase(it);
+                favoriteContacts.insert(*it);
+                cout << "contact is moved." << endl;
+            }
+            else {
+                cout << "contact is not founded in favorite ones." << endl;
+            }
+            break;
+
+        }
