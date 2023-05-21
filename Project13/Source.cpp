@@ -187,3 +187,32 @@ int main() {
             break;
 
         }
+
+        case 7: {
+
+            cout << "name of the contact to delete a  cellnumber for: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto& contact : contacts) {
+                if (contact.name == name) {
+                    cout << "type of the phone number to delete: ";
+                    string type;
+                    getline(cin, type);
+                    for (auto it = contact.cellNumbers.begin(); it != contact.cellNumbers.end(); it++) {
+                        if (it->type == type) {
+                            contact.cellNumbers.erase(it);
+                            cout << "cellnumber is deleted." << endl;
+                            ifFounded = true;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
