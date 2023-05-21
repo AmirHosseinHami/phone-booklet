@@ -237,3 +237,24 @@ int main() {
             break;
 
         }
+
+        case 9: {
+
+            cout << "name of the contact to remove from favorite ones: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto it = favoriteContacts.begin(); it != favoriteContacts.end(); it++) {
+                if ((*it)->name == name) {
+                    favoriteContacts.erase(it);
+                    cout << "contact is removed from favorite ones." << endl;
+                    ifFounded = true;
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
