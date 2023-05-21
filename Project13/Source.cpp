@@ -216,3 +216,24 @@ int main() {
             break;
 
         }
+
+        case 8: {
+
+            cout << "name of the contact to add to favorite ones: ";
+            string name;
+            getline(cin, name);
+            bool ifFounded = false;
+            for (auto& contact : contacts) {
+                if (contact.name == name) {
+                    favoriteContacts.insert(&contact);
+                    cout << "contact is added to favorite ones." << endl;
+                    ifFounded = true;
+                    break;
+                }
+            }
+            if (!ifFounded) {
+                cout << "contact is not founded." << endl;
+            }
+            break;
+
+        }
