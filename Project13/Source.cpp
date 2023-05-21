@@ -311,3 +311,13 @@ int main() {
             break;
 
         }
+
+        case 13: {
+
+            cout << "favorite contacts:" << endl;
+            for (const auto& contact : favoriteContacts) {
+                cout << "  " << contact->name << endl;
+            }
+            break;
+
+        }
