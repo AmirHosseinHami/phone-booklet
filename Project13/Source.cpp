@@ -280,3 +280,14 @@ int main() {
             break;
 
         }
+
+        case 11: {
+
+            cout << "All contacts:" << endl;
+            sort(contacts.begin(), contacts.end(), compareBase);
+            for (const auto& contact : contacts) {
+                cout << "  " << contact.name << endl;
+            }
+            break;
+
+        }
